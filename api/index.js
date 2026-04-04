@@ -42,14 +42,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Verify connection configuration
-transporter.verify(function (error, success) {
-  if (error) {
-    console.error('SMTP Connection Error:', error.message);
-  } else {
-    console.log('SMTP Server is ready to take our messages');
-  }
-});
+// Verify connection configuration (Optional: only logs on cold start)
+if (!process.env.VERCEL) {
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.error('SMTP Connection Error:', error.message);
+    } else {
+      console.log('SMTP Server is ready to take our messages');
+    }
+  });
+}
 
 // Email dispatch helper
 const sendEmail = async (subject, html) => {
@@ -157,7 +159,8 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// Request Project Setup Route
+// Standalone route mapping (for Vercel functions that might strip prefixes)
+app.post('/contact', (req, res) => app.handle(req, res)); // Backup for different routing styles
 app.post('/api/request-project', async (req, res) => {
   const { service, budget_range, timeline, name, email, phone } = req.body;
   
