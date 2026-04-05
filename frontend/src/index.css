@@ -35,10 +35,10 @@
   --lh-body: 1.65;
 
   /* Responsive Headings (Fluid Scale) */
-  --fs-hero: clamp(42px, 8vw, 88px);
-  --fs-section: clamp(32px, 5vw, 56px);
-  --fs-sub: clamp(24px, 3vw, 32px);
-  --fs-body: clamp(17px, 1.5vw, 21px);
+  --fs-hero: clamp(36px, 8vw, 88px);
+  --fs-section: clamp(28px, 5vw, 56px);
+  --fs-sub: clamp(22px, 3vw, 32px);
+  --fs-body: clamp(16px, 1.5vw, 21px);
 
   /* Radius & Shadows */
   --radius-card: 24px;
@@ -100,7 +100,10 @@ h1, h2, h3, h4 { letter-spacing: -0.06em; font-weight: 700; color: var(--text-pr
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 var(--space-4); /* Fluid horizontal padding */
+  padding: 0 var(--space-6); /* Increased fluid padding for better breathing room */
+}
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
 }
 
 /* Fluid Grid System */

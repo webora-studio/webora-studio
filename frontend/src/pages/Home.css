@@ -3,9 +3,16 @@
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: var(--bg-color);
-  padding-top: 140px; /* Offset for fixed Navbar */
+  padding-top: 80px; /* Base padding */
   overflow: hidden;
+}
+@media (min-height: 1000px) {
+  .hero-premium {
+    min-height: 800px; /* Cap height on extremely tall screens like iPad Pro Portrait */
+    padding-top: 120px;
+  }
 }
 
 .hero-container-flex {
@@ -53,20 +60,28 @@
 }
 
 @media (min-width: 1024px) {
+  .hero-premium {
+    padding-top: 140px;
+  }
   .hero-container-flex {
     flex-direction: row;
     justify-content: space-between;
     gap: 80px;
+  }
+  .hero-content-left {
+    align-items: flex-start;
+    text-align: left;
   }
   .hero-robot-right {
     height: 700px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .hero-premium {
-    padding-top: 150px; /* More clearance for mobile navbar */
+    padding-top: 120px; /* More clearance for mobile navbar */
     padding-bottom: 60px;
+    flex-direction: column;
   }
   .hero-content-left {
     align-items: center;

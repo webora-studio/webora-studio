@@ -13,7 +13,7 @@ const staggerContainer = {
 
 const About = () => {
   return (
-    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="about-page bg-grid" style={{ paddingTop: '160px', minHeight: '100vh', paddingBottom: '120px' }}>
+    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="about-page bg-grid section-pad" style={{ minHeight: '100vh' }}>
       
       {/* Hero Visual Block */}
       <section className="container mb-24 text-center">
@@ -26,38 +26,38 @@ const About = () => {
           </p>
         </motion.div>
         
-        <motion.div variants={fadeUp} className="w-full relative" style={{ height: '600px', borderRadius: '48px', overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.1)' }}>
+        <motion.div variants={fadeUp} className="w-full relative overflow-hidden rounded-[24px] md:rounded-[48px] shadow-premium" style={{ height: 'clamp(300px, 40vh, 600px)' }}>
           <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" alt="Webora Team Workspace" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-          <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(180deg, rgba(247,248,249,0) 0%, rgba(28,31,36,0.3) 100%)' }}></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
         </motion.div>
       </section>
 
       {/* Metrics & Values */}
       <section className="section-pad">
         <div className="container">
-          <div className="grid-2-col gap-24 items-center">
+          <div className="grid-2-col items-center">
             <motion.div variants={fadeUp} className="max-w-xl">
-              <h2 className="heading-section mb-8 text-left" style={{ fontSize: '56px', letterSpacing: '-0.04em' }}>Simple and <br/> modern design.</h2>
+              <h2 className="heading-section mb-8 text-left">Simple and <br className="desktop-only"/> modern design.</h2>
               <p className="text-secondary text-body mb-8 leading-relaxed" style={{ fontSize: '20px', opacity: 0.8 }}>
                 We focus on creating clean, professional, and trustworthy websites that clearly explain your business value. Our goal is to make your business stand out with simple and digital solutions.
               </p>
             </motion.div>
 
-            <motion.div variants={staggerContainer} className="grid-2-col" style={{ gap: '32px' }}>
+            <motion.div variants={staggerContainer} className="grid-2-col">
               <motion.div variants={fadeUp} className="card-glass" style={{ padding: '48px' }}>
-                <h3 className="heading-hero mb-2" style={{ fontSize: '56px', color: 'var(--primary)' }}>Fast</h3>
+                <h3 className="heading-hero mb-2" style={{ color: 'var(--primary)' }}>Fast</h3>
                 <p className="text-secondary font-weight-bold" style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.6 }}>Delivery</p>
               </motion.div>
               <motion.div variants={fadeUp} className="card-glass" style={{ padding: '48px' }}>
-                <h3 className="heading-hero mb-2" style={{ fontSize: '56px', color: 'var(--primary)' }}>Modern</h3>
+                <h3 className="heading-hero mb-2" style={{ color: 'var(--primary)' }}>Modern</h3>
                 <p className="text-secondary font-weight-bold" style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.6 }}>Design</p>
               </motion.div>
               <motion.div variants={fadeUp} className="card-glass" style={{ padding: '48px', background: 'var(--primary)', color: 'white' }}>
-                <h3 className="heading-hero mb-2" style={{ fontSize: '56px', color: 'white' }}>AI</h3>
+                <h3 className="heading-hero mb-2" style={{ color: 'white' }}>AI</h3>
                 <p className="text-white font-weight-bold" style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.8 }}>Powered</p>
               </motion.div>
               <motion.div variants={fadeUp} className="card-glass" style={{ padding: '48px' }}>
-                <h3 className="heading-hero mb-2" style={{ fontSize: '56px', color: 'var(--primary)' }}>24/7</h3>
+                <h3 className="heading-hero mb-2" style={{ color: 'var(--primary)' }}>24/7</h3>
                 <p className="text-secondary font-weight-bold" style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.6 }}>Reliable Support</p>
               </motion.div>
             </motion.div>

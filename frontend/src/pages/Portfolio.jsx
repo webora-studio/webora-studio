@@ -41,7 +41,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="portfolio-page bg-grid" style={{ paddingTop: '160px', minHeight: '100vh', paddingBottom: '120px' }}>
+    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="portfolio-page bg-grid section-pad" style={{ minHeight: '100vh' }}>
       <section className="container mb-24 text-center">
         <motion.h1 variants={fadeUp} className="heading-hero mb-8">Selected <span style={{ color: 'var(--primary)' }}>Case Studies.</span></motion.h1>
         <motion.p variants={fadeUp} className="text-body text-secondary max-w-xl mx-auto leading-relaxed">
@@ -50,7 +50,7 @@ const Portfolio = () => {
       </section>
 
       <section className="container">
-        <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
+        <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-24">
           {projects.map((p, i) => (
             <motion.a 
               href={p.link || "#"}
@@ -79,11 +79,11 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-700 pointer-events-none" />
               </div>
-              <div className="port-content mt-12 px-4">
+              <div className="port-content mt-8 md:mt-12 px-2 md:px-4">
                 <div className="flex justify-between items-end gap-10">
                    <div className="flex-1">
-                      <h2 className="heading-sub mb-4 tracking-tighter group-hover:text-primary transition-colors" style={{ fontSize: i % 3 === 0 ? '56px' : '42px', lineHeight: '1.1' }}>{p.title}</h2>
-                      <p className="text-secondary text-body max-w-xl" style={{ fontSize: '20px', opacity: 0.8 }}>{p.desc}</p>
+                       <h2 className="heading-sub mb-4 tracking-tighter group-hover:text-primary transition-colors">{p.title}</h2>
+                       <p className="text-secondary text-body max-w-xl" style={{ opacity: 0.8 }}>{p.desc}</p>
                    </div>
                    <div className="hidden md:flex">
                       <div className="w-16 h-16 rounded-full border border-divider flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">

@@ -33,14 +33,14 @@ const Home = () => {
     <div className="home-premium bg-grid">
       
       {/* SECTION 1: HERO */}
-      <section className="hero-premium relative overflow-hidden" style={{ minHeight: 'calc(100vh - 80px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="hero-premium relative overflow-hidden">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
         
         {/* Animated Glow Orbs - Carefully placed to avoid mobile overflow */}
-        <div className="glow-orb" style={{ width: 'clamp(200px, 50vw, 600px)', height: 'clamp(200px, 50vw, 600px)', background: 'rgba(0,0,0,0.03)', top: '-10%', right: '-5%' }} />
+        <div className="glow-orb" style={{ width: 'clamp(200px, 40vw, 600px)', height: 'clamp(200px, 40vw, 600px)', background: 'rgba(0,0,0,0.03)', top: '-10%', right: '-5%' }} />
         <div className="glow-orb" style={{ width: 'clamp(150px, 30vw, 400px)', height: 'clamp(150px, 30vw, 400px)', background: 'rgba(0,0,0,0.02)', bottom: '5%', left: '-5%', animationDelay: '-5s' }} />
 
         <div className="container relative z-10 w-full hero-container-flex">
@@ -102,7 +102,6 @@ const Home = () => {
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
             className="grid-2-col"
-            style={{ gap: '64px' }}
           >
             {[
               { title: "Modern Websites", desc: "Professional websites designed to attract customers." },
@@ -134,7 +133,7 @@ const Home = () => {
             <h2 className="heading-section text-left mb-4">Selected Showcase</h2>
           </motion.div>
           
-          <div className="grid-2-col" style={{ gap: '64px' }}>
+          <div className="grid-2-col">
             {[
               { 
                 title: "Ecommerce Website", 
@@ -194,7 +193,7 @@ const Home = () => {
             Our Process
           </motion.h2>
           
-          <div className="process-timeline" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '64px' }}>
+          <div className="process-timeline grid-4-col">
             {[
               { title: "Understanding", desc: "We start by understanding your specific business needs.", icon: Search },
               { title: "Designing", desc: "Creating a professional design that fits your brand.", icon: PenTool },
@@ -311,7 +310,7 @@ const Home = () => {
       {/* SECTION 6: TRUST */}
       <section className="section-pad" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container">
-          <div className="grid-3-col" style={{ gap: '24px' }}>
+          <div className="grid-3-col">
             {[
               "Modern UI design", "Mobile responsive", "Fast loading websites", 
               "SEO friendly structure", "AI powered solutions", "Business-focused approach"

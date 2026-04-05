@@ -22,7 +22,7 @@ const Services = () => {
   ];
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="services-page bg-grid" style={{ paddingTop: '160px', minHeight: '100vh', paddingBottom: '80px' }}>
+    <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="services-page bg-grid section-pad" style={{ minHeight: '100vh' }}>
       <section className="container mb-24 text-center">
         <motion.h1 variants={fadeUp} className="heading-hero mb-8">Professional websites and smart <span style={{ color: 'var(--primary)' }}>automation solutions.</span></motion.h1>
         <motion.p variants={fadeUp} className="text-body text-secondary max-w-2xl mx-auto leading-relaxed">
@@ -31,12 +31,12 @@ const Services = () => {
       </section>
 
       <section className="container section-pad pt-0">
-        <motion.div variants={staggerContainer} className="grid-2-col" style={{ gap: '64px' }}>
+        <motion.div variants={staggerContainer} className="grid-2-col">
           {categories.map((cat, idx) => (
-            <motion.div variants={fadeUp} key={idx} className="card-glass flex flex-col justify-start items-start" style={{ minHeight: '400px' }}>
+            <motion.div variants={fadeUp} key={idx} className="card-glass flex flex-col justify-start items-start" style={{ minHeight: '320px' }}>
               <div className="w-full">
-                <h2 className="heading-sub mb-6" style={{ fontSize: '36px' }}>{cat.title}</h2>
-                <p className="text-secondary text-body mb-12 leading-relaxed" style={{ fontSize: '20px', opacity: 0.8 }}>{cat.desc}</p>
+                <h2 className="heading-sub mb-6">{cat.title}</h2>
+                <p className="text-secondary text-body mb-12 leading-relaxed" style={{ opacity: 0.8 }}>{cat.desc}</p>
               </div>
               
               <div style={{ marginTop: 'auto', width: '100%' }}>
